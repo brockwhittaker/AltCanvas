@@ -49,8 +49,8 @@ ClickEvents.prototype = {
 // --- init canvas and add settings --- //
 canvas.init(canvasElem, 300, 300);
 
-canvas.style.brushSize = $("#brush_size")[0].defaultValue = 20;
-canvas.style.brushColor = [230,230,230];
+canvas.setPixelSize($("#brush_size")[0].defaultValue = 20);
+canvas.setFillColor(230, 230, 230);
 // ------------------------------------ //
 
 // --- init doc events --- //
@@ -59,11 +59,11 @@ DocEvents.events(canvasElem, canvas);
 
 $(".ind-color").click(function (e) {
   var color = e.target.className.split(" ")[1]; // get the color name (second class)
-  canvas.style.brushColor = JSON.parse(document.getElementsByClassName(color)[0].getAttribute('color')); // get color attr value (array) and apply
+  canvas.setFillColor(JSON.parse(document.getElementsByClassName(color)[0].getAttribute('color'))); // get color attr value (array) and apply
 });
 
 $("#brush_size").on("change", function () {
-  canvas.style.brushSize = parseInt($(this).val(), 10);
+  canvas.setPixelSize(parseInt($(this).val(), 10));
 }); // change the canvas brush size on slider change
 
 

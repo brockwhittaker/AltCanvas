@@ -119,12 +119,18 @@ Canvas.prototype = {
 
   /* --- drawing extensions here --- */
 
-  setBrushSize: function (size) {
+  setPixelSize: function (size) {
     this.style.brushSize = parseInt(size, 10);
   },
 
-  setBrushColor: function (r, g, b) {
-    this.style.brushColor = [parseInt(r, 10), parseInt(r, 10), parseInt(g, 10)];
+  setFillColor: function (r, g, b) {
+    if (typeof r === "object") {
+      this.style.brushColor = r;
+    } else if (r && g && b) {
+      this.style.brushColor = [parseInt(r, 10), parseInt(g, 10), parseInt(b, 10)];
+    } else {
+      console.log("Invalid input. Please input a red, green, and blue value between 0 and 255.");
+    }
   },
 
   drawPixel: function (x, y) {
