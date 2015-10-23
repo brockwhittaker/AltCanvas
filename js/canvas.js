@@ -119,6 +119,14 @@ Canvas.prototype = {
 
   /* --- drawing extensions here --- */
 
+  setBrushSize: function (size) {
+    this.style.brushSize = parseInt(size, 10);
+  },
+
+  setBrushColor: function (r, g, b) {
+    this.style.brushColor = [parseInt(r, 10), parseInt(r, 10), parseInt(g, 10)];
+  },
+
   drawPixel: function (x, y) {
     var b = this.style.brushSize;
 
