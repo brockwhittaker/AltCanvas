@@ -116,7 +116,12 @@ Canvas.prototype = {
     this.container.src = 'data:image/bmp;base64,' + this.file;
 
     this.executeTime.end = new Date() * 1;
-    this.executeTime.total = this.executeTime.end - this.executeTime.start;
+    this.executeTime = {
+      start: 0,
+      dataFormatted: this.executeTime.dataFormatted - this.executeTime.start,
+      fileCreated: this.executeTime.fileCreated - this.executeTime.start,
+      end: this.executeTime.end - this.executeTime.start
+    };
 
     return this;
   },

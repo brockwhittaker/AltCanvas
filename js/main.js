@@ -20,7 +20,7 @@ ClickEvents.prototype = {
         } else {
           canvas.drawRectangle($this.offset.x, e.offsetX, $this.offset.y, e.offsetY);
           canvas.displayImage();
-          $("#time_taken").html(canvas.executeTime.total + "ms");
+          $("#time_taken").html(canvas.executeTime.end + "ms");
           console.log(canvas.executeTime);
           $this.offset = null;
         }
@@ -30,7 +30,7 @@ ClickEvents.prototype = {
       if (!$this.drawRectangle && $this.mouseIsDown) {
         canvas.drawPixel(e.offsetX, e.offsetY);
         canvas.displayImage();
-        $("#time_taken").html(canvas.executeTime.total + "ms");
+        $("#time_taken").html(canvas.executeTime.end + "ms");
         console.log(canvas.executeTime);
       }
     };
