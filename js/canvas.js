@@ -39,6 +39,7 @@ Canvas.prototype = {
     }
 
     this.formattedData = formattedData;
+    this.executeTime.dataFormatted = new Date() * 1;
 
     return this;
   },
@@ -91,6 +92,7 @@ Canvas.prototype = {
     );
 
     this.file = btoa(file);
+    this.executeTime.fileCreated = new Date() * 1;
 
     return this;
   },
@@ -98,6 +100,8 @@ Canvas.prototype = {
   displayImage: function (data) {
     this.executeTime = {
       start: new Date() * 1,
+      dataFormatted: null,
+      fileCreated: null,
       end: null,
       total: null
     };
