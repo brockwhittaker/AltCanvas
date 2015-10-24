@@ -47,10 +47,11 @@ ClickEvents.prototype = {
 };
 
 // --- init canvas and add settings --- //
-canvas.init(canvasElem, 300, 300);
-
-canvas.setPixelSize($("#brush_size")[0].defaultValue = 20);
-canvas.setFillColor(230, 230, 230);
+canvas.init(canvasElem, 300, 300)
+      .setPixelSize($("#brush_size")[0].defaultValue = 20)
+      .setBackgroundColor(255,165,0)
+      .setFillColor(230, 230, 230)
+      .displayImage();
 // ------------------------------------ //
 
 // --- init doc events --- //

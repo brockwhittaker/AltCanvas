@@ -48,4 +48,4 @@ A few features are in the pipeline for the future:
 2. More demo features to make accessing canvas properties more user-friendly.
 
 ##Demo
-You can check out a demo at http://www.lavancier.com/AltCanvas/
+You can check out a demo at http://lavancier.com/AltCanvas/

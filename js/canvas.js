@@ -121,6 +121,8 @@ Canvas.prototype = {
 
   setPixelSize: function (size) {
     this.style.brushSize = parseInt(size, 10);
+
+    return this;
   },
 
   setFillColor: function (r, g, b) {
@@ -131,6 +133,19 @@ Canvas.prototype = {
     } else {
       console.log("Invalid input. Please input a red, green, and blue value between 0 and 255.");
     }
+
+    return this;
+  },
+
+  setBackgroundColor: function (r, g, b) {
+    for (var x = 0; x < this.width; x++) {
+      this.data[x] = [];
+      for (var y = 0; y < this.height; y++) {
+        this.data[x][y] = [r, g, b];
+      }
+    }
+
+    return this;
   },
 
   drawPixel: function (x, y) {
@@ -156,5 +171,7 @@ Canvas.prototype = {
         this.data[j][i] = this.style.brushColor;
       }
     }
+
+    return this;
   }
 };
